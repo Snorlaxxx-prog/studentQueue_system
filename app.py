@@ -4,9 +4,9 @@ app = Flask(__name__)
 app.secret_key = "studentqueue_secret_key"
 
 admin = {
-    "username": "admin",
+    "username": "ckcmadmin",
     "password": "1234",
-    "name": "Administrator"
+    "name": "Dolfh"
 }
 
 reset_password = "gwapoko"
