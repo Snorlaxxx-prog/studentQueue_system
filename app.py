@@ -6,8 +6,11 @@ app.secret_key = "studentqueue_secret_key"
 admin = {
     "username": "admin",
     "password": "1234",
-    "name": "Programmer Dolfh"
+    "name": "Administrator"
 }
+
+reset_password = "gwapoko"
+
 
 waiting_queue = []
 completed_students = []
@@ -112,6 +115,29 @@ def mark_done():
         completed_students.append(student)
 
     return redirect(url_for("dashboard"))
+
+@app.route("/reset-queue", methods=["GET", "POST"])
+def reset_queue():
+    global waiting_queue, next_number
+
+    if "admin_name" not in session:
+        return redirect(url_for("login"))
+
+    if request.method == "POST":
+        password = request.form["password"]
+
+        if password == reset_password:
+            waiting_queue.clear()
+            next_number = 1
+
+            return redirect(url_for("dashboard"))
+
+        return render_template(
+            "reset_queue.html",
+            error="Incorrect reset password"
+        )
+
+    return render_template("reset_queue.html")
 
 
 @app.route("/logout")

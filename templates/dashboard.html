@@ -19,15 +19,19 @@
 
     <div class="menu">
 
-        <a href="{{ url_for('add_student') }}" class="menu-button">
-            Add Student
-        </a>
+    <a href="{{ url_for('add_student') }}" class="menu-button">
+        Add Student
+    </a>
 
-        <a href="{{ url_for('waiting_queue_page') }}" class="menu-button">
-            View Waiting Queue
-        </a>
+    <a href="{{ url_for('waiting_queue_page') }}" class="menu-button">
+        View Waiting Queue
+    </a>
 
-    </div>
+    <a href="{{ url_for('reset_queue') }}" class="reset-button">
+        Reset Queue
+    </a>
+
+</div>
 
     {% if current_student %}
 

@@ -163,3 +163,18 @@ th {
 .done-button:hover {
     background: darkgreen;
 }
+
+.reset-button {
+    display: block;
+    padding: 15px;
+    background: #dc3545;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.reset-button:hover {
+    background: #b02a37;
+}
