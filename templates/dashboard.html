@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <h1>CKCM Student Queue System</h1>
+
+    <p>
+        Welcome, <strong>{{ admin_name }}</strong>
+    </p>
+
+    <div class="menu">
+
+        <a href="{{ url_for('add_student') }}" class="menu-button">
+            Add Student
+        </a>
+
+        <a href="{{ url_for('waiting_queue_page') }}" class="menu-button">
+            View Waiting Queue
+        </a>
+
+    </div>
+
+    {% if current_student %}
+
+    <div class="now-serving">
+
+        <h2>Now Serving</h2>
+
+        <h1>
+            #{{ "%03d" | format(current_student.number) }}
+        </h1>
+
+        <p class="student-name">
+            {{ current_student.name }}
+        </p>
+
+        <a href="{{ url_for('mark_done') }}" class="done-button">
+            Mark as Done
+        </a>
+
+    </div>
+
+    {% else %}
+
+    <div class="now-serving">
+
+        <h2>Current Queue</h2>
+
+        <p>No students are waiting.</p>
+
+    </div>
+
+    {% endif %}
+
+    <a href="{{ url_for('logout') }}" class="logout">
+        Logout
+    </a>
+
+</div>
+
+</body>
+</html>

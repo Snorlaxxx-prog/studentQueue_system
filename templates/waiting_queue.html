@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Waiting Queue</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Waiting Queue</h1>
+
+    {% if students %}
+
+    <table>
+
+        <tr>
+            <th>Position</th>
+            <th>Queue Number</th>
+            <th>Student Name</th>
+            <th>Action</th>
+        </tr>
+
+        {% for student in students %}
+
+        <tr>
+            <td>{{ loop.index }}</td>
+
+            <td>
+                #{{ "%03d" | format(student.number) }}
+            </td>
+
+            <td>
+                {{ student.name }}
+            </td>
+
+            <td>
+                <a href="{{ url_for('mark_done', number=student.number) }}"
+                   class="done-button">
+                    Mark as Done
+                </a>
+            </td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <div class="latest">
+
+        <h3>Latest Student</h3>
+
+        <p>
+            #{{ "%03d" | format(students[-1].number) }}
+            -
+            {{ students[-1].name }}
+        </p>
+
+    </div>
+
+    {% else %}
+
+    <p class="empty">
+        No students are currently waiting.
+    </p>
+
+    {% endif %}
+
+
+    {% if completed %}
+
+    <h2 class="completed-title">Completed Students</h2>
+
+    <table>
+
+        <tr>
+            <th>Queue Number</th>
+            <th>Student Name</th>
+            <th>Status</th>
+        </tr>
+
+        {% for student in completed %}
+
+        <tr>
+            <td>
+                #{{ "%03d" | format(student.number) }}
+            </td>
+
+            <td>
+                {{ student.name }}
+            </td>
+
+            <td>
+                Done
+            </td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    {% endif %}
+
+    <br>
+
+    <a href="{{ url_for('dashboard') }}">
+        Back to Dashboard
+    </a>
+
+</div>
+
+</body>
+</html>

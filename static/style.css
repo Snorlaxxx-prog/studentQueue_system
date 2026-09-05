@@ -1,0 +1,165 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("/static/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 40px;
+}
+
+.login-container,
+.container,
+.dashboard {
+    width: 400px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.menu-button {
+    display: block;
+    padding: 15px;
+    background: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.menu-button:hover {
+    background: #0056b3;
+}
+
+.logout {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.ticket {
+    width: 250px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.ticket h1 {
+    font-size: 50px;
+    margin: 10px;
+}
+
+.student-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ticket a {
+    display: block;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #eee;
+}
+
+.latest {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f1f1f1;
+    text-align: center;
+}
+
+.empty {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.now-serving {
+    margin-top: 25px;
+    padding: 15px;
+    background: #f1f1f1;
+    text-align: center;
+}
+
+.now-serving h2 {
+    margin-top: 0;
+}
+
+.now-serving h1 {
+    font-size: 45px;
+    margin: 10px;
+}
+
+.done-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background: green;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.done-button:hover {
+    background: darkgreen;
+}

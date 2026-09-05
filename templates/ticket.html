@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Queue Ticket</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="ticket">
+
+    <h2>STUDENT QUEUE</h2>
+
+    <p>Queue Number</p>
+
+    <h1>#{{ "%03d" | format(number | int) }}</h1>
+
+    <p class="student-name">
+        {{ name }}
+    </p>
+
+    <hr>
+
+    <p>
+        Please wait for your number to be called.
+    </p>
+
+    <a href="{{ url_for('dashboard') }}">
+        Done
+    </a>
+
+</div>
+
+</body>
+</html>
